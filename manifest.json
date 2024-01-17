@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Hello World Extension",
+  "description": "A basic Chrome Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "icon.png"
+  }, 
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  }
+
+}
